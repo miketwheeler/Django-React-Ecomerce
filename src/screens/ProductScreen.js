@@ -69,7 +69,7 @@ function ProductScreen({ match }) {
               <ListGroup.Item>
                 <Button
                   className="btn-block"
-                  disabled={product.countInStock}
+                  disabled={product.countInStock === 0}
                   type="button"
                 >
                   Add to Cart
