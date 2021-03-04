@@ -5,4 +5,3 @@ function CartScreen() {
 }
 
 export default CartScreen;
-Cart;
