@@ -29,10 +29,10 @@ function RegisterScreen({location, history}) {
 
 	const submitHandler = (e) =>{
 		e.preventDefault();
-		if(password!=confirmPassword){
+		if(password !== confirmPassword){
 			setMessage('Passwords do not match!')
 		} else {
-			dispatch(register(name. email, password));
+			dispatch(register(name, email, password));
 		}
 	}
 
@@ -45,8 +45,8 @@ function RegisterScreen({location, history}) {
 			{loading && <Loader/>}
 			{/*  */}
 			<Form onSubmit={submitHandler}>
-			<Form.Group controlId='name'>
-					<Form.Label>name</Form.Label>
+				<Form.Group controlId='name'>
+					<Form.Label>Name</Form.Label>
 					<Form.Control
 						required
 						type='name'
