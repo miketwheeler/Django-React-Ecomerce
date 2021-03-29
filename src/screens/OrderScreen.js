@@ -22,7 +22,7 @@ function OrderScreen({ match }) {
 	const {loading: loadingPay, success: successPay} = orderPay;
 
 	// tax in decimal percent form!
-	const currentTaxRate = 0.082;
+	// const currentTaxRate = 0.082;
 	
 	if(!loading && !error){
 		order.itemsPrice = order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2);

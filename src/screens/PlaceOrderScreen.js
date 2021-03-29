@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react'; //useState, pulled due to import warning
 import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,8 +21,8 @@ function PlaceOrderScreen({ history }) {
 	const currentTaxRate = 0.082;
 	cart.itemsPrice = cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2);
 	cart.shippingPrice = (cart.itemsPrice > 100 ? 0 : 10).toFixed(2);
-	cart.taxPrice = Number(currentTaxRate * cart.itemsPrice).toFixed(2);
-	cart.totalPrice = (Number(cart.taxPrice) + Number(cart.itemsPrice) + Number(cart.shippingPrice)).toFixed(2);
+	cart.taxPrice = Number((currentTaxRate) * cart.itemsPrice).toFixed(2);
+	cart.totalPrice = (Number(cart.itemsPrice) + Number(cart.shippingPrice) + Number(cart.taxPrice)).toFixed(2);
 
 	if(!cart.paymentMethod){
 		history.push('/payment')
@@ -50,7 +50,7 @@ function PlaceOrderScreen({ history }) {
 
 	return (
 		<div>
-			<CheckoutSteps step1 step2 step3 step4 />
+			<CheckoutSteps step1 step2 step3 step4 step5/>
 			<Row>
 				<Col md={8}>
 					<ListGroup variant='flush'>
@@ -150,7 +150,7 @@ function PlaceOrderScreen({ history }) {
 							<ListGroup.Item>
 								<Button 
 									type='button'
-									className='btn-black'
+									className='btn-block'
 									disabled={cart.cartItems === 0}
 									onClick={placeOrder}
 									>
