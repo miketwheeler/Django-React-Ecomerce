@@ -30,7 +30,7 @@ function ProductListScreen({ history, match }) {
 		}
 	};
 
-	const createProductHandler = { products } => {
+	const createProductHandler = (products) => {
 		// create product
 	}
 
@@ -64,7 +64,7 @@ function ProductListScreen({ history, match }) {
 							</tr>
 						</thead>
 						<tbody>
-							{users.map(product => (
+							{products.map(product => (
 								<tr key={product._id}>
 									<td>{product._id}</td>
 									<td>{product.name}</td>
