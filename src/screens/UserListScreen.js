@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react'; // useState, rm from import -unused
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,7 +6,7 @@ import Loader from '../components/Loader';
 import Message from '../components/Message';
 import { listUsers, deleteUser } from '../actions/userActions';
 
-function UserListScreen({history}) {
+function UserListScreen({ history }) {
 
 	const dispatch = useDispatch();
 	
@@ -25,7 +25,7 @@ function UserListScreen({history}) {
 		} else {
 			history.push('/login');
 		};
-	}, [dispatch, history, successDelete]);
+	}, [dispatch, history, successDelete, userInfo]);
 
 	const deleteHandler = (id) => {
 		if(window.confirm('Are you sure you want to delete this User?')){
@@ -37,7 +37,7 @@ function UserListScreen({history}) {
 		<div>
 			<h1>Users</h1>
 			{loading 
-			? <Loader/> 
+			? (<Loader/>) 
 			: error 
 				? (<Message variant='danger'>{error}</Message>)
 				: (
