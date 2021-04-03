@@ -32,7 +32,8 @@ function App() {
 		  <Route path='/placeorder' component={PlaceOrderScreen} />
 		  <Route path='/order/:id' component={OrderScreen} />
           <Route path="/product/:id" component={ProductScreen} />
-          <Route path="/cart/:id?" component={CartScreen} />
+          
+		  <Route path="/cart/:id?" component={CartScreen} />
 
 		  <Route path="/admin/userlist" component={UserListScreen}/>
 		  <Route path="/admin/user/:id/edit" component={UserEditScreen}/>
