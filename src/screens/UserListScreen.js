@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'; // useState, rm from import -unused
+import React, { useState, useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -84,4 +84,4 @@ function UserListScreen({ history }) {
 	)
 }
 
-export default UserListScreen
+export default UserListScreen;

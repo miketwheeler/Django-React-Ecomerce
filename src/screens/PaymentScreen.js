@@ -15,15 +15,15 @@ function PaymentScreen({ history }) {
 
 	const [paymentMethod, setPaymentMethod] = useState('PayPal');
 
+	if(!shippingAddress.address){
+		history.push('/shipping');
+	}
+
 	const submitHandler = (e) => {
 		e.preventDefault();
 		dispatch(savePaymentMethod(paymentMethod));
 		history.push('/placeorder');
 	}
-	if(!shippingAddress.address){
-		history.push('/shipping');
-	}
-
 
 	return (
 		<FormContainer>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';   //useEffect  <<+++ pulled from import, throwing not-used warning
+import React, { useState, useEffect } from 'react';   //useEffect  <<+++ pulled from import, throwing not-used warning
 import { Form, Button} from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import FormContainer from '../components/FormContainer';
