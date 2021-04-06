@@ -49,7 +49,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
 		const {data} = await axios.post(
 			`/api/orders/add/`,
 			order,
-			config,
+			config
 		)
 		dispatch({
 			type: ORDER_CREATE_SUCCESS,
@@ -133,7 +133,7 @@ export const payOrder = (id, paymentResult) => async (dispatch, getState) => {
 			payload: data,
 		})
 		
-	} catch(error){
+	} catch (error) {
 		dispatch({
 			type: ORDER_PAY_FAIL,
 			payload: error.response && error.response.data.detail
@@ -202,7 +202,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
 			payload: data,
 		})
 		
-	} catch(error){
+	} catch (error) {
 		dispatch({
 			type: ORDER_LIST_MY_FAIL,
 			payload: error.response && error.response.data.detail
@@ -228,7 +228,7 @@ export const listOrders = () => async (dispatch, getState) => {
 		}
 		const {data} = await axios.get(
 			`/api/orders/`,
-			config,
+			config
 		)
 		dispatch({
 			type: ORDER_LIST_SUCCESS,
